@@ -50,7 +50,7 @@ public class GenericDAOImpl<IDENTIFIER extends Number, T extends Identifier<IDEN
 
 	@Override
 	public List<T> findAll(Pageable pageable) {
-		int pageNumber  = pageable.getPageNumber();
+		int pageNumber = pageable.getPageNumber();
 		int limit = pageable.getPageSize();
 		CriteriaBuilder builder = entityManager.getCriteriaBuilder();
 		CriteriaQuery<T> criteria = builder.createQuery(type);
@@ -79,15 +79,15 @@ public class GenericDAOImpl<IDENTIFIER extends Number, T extends Identifier<IDEN
 	public EntityManager getEntityManager() {
 		return entityManager;
 	}
-	
-	public Session getSession(){
+
+	public Session getSession() {
 		return entityManager.unwrap(Session.class);
 	}
 
 	@Override
-	public T mergeOrPersist(T entity){
+	public T mergeOrPersist(T entity) {
 		Optional<T> entityLocated = Objects.nonNull(entity.getId()) ? this.find(entity) : Optional.empty();
-		if(entityLocated.isPresent()) {
+		if (entityLocated.isPresent()) {
 			entity = merge(entity);
 		} else {
 			insert(entity);

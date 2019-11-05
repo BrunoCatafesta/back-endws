@@ -6,7 +6,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class PhoneValidator implements ConstraintValidator<Phone, String> {
-	
+
 	private Pattern regex = Pattern.compile("\\+\\d{12}");
 
 	@Override

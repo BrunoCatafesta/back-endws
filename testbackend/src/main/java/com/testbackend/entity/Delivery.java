@@ -10,29 +10,29 @@ import javax.validation.constraints.NotNull;
 public class Delivery implements Identifier<Long> {
 	private static final long serialVersionUID = 1L;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sq_delivery")
-    @SequenceGenerator(name = "sq_delivery", allocationSize = 1, sequenceName="sq_delivery")
-    private Long id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sq_delivery")
+	@SequenceGenerator(name = "sq_delivery", allocationSize = 1, sequenceName = "sq_delivery")
+	private Long id;
 
-    @NotNull
-    @NotBlank
-    private String mode;
+	@NotNull
+	@NotBlank
+	private String mode;
 
-    public String getMode() {
-        return mode;
-    }
+	public String getMode() {
+		return mode;
+	}
 
-    public void setMode(String mode) {
-        this.mode = mode;
-    }
+	public void setMode(String mode) {
+		this.mode = mode;
+	}
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+	public void setId(Long id) {
+		this.id = id;
+	}
 
-    @Override
-    public Long getId() {
-        return id;
-    }
+	@Override
+	public Long getId() {
+		return id;
+	}
 }

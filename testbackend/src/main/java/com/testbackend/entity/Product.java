@@ -13,76 +13,74 @@ public class Product implements Identifier<Long> {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sq_product")
-    @SequenceGenerator(name = "sq_product", allocationSize = 1, sequenceName="sq_product")
-    private Long id;
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sq_product")
+	@SequenceGenerator(name = "sq_product", allocationSize = 1, sequenceName = "sq_product")
+	private Long id;
 
-    @NotNull
-    private String name;
-    
-    @NotBlank
-    private  String description;
+	@NotNull
+	private String name;
 
-    @NotNull
-    private Long barcode;
+	@NotBlank
+	private String description;
 
-    @Positive
-    @Column(name = "unit_price")
-    private BigDecimal unitPrice;
+	@NotNull
+	private Long barcode;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "manufacturer")
-    private Manufacturer manufacturer;
+	@Positive
+	@Column(name = "unit_price")
+	private BigDecimal unitPrice;
 
-    public String getName() {
-        return name;
-    }
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "manufacturer")
+	private Manufacturer manufacturer;
 
-    public void setName(String name) {
-        this.name = name;
-    }
+	public String getName() {
+		return name;
+	}
 
-    public String getDescription() {
-        return description;
-    }
+	public void setName(String name) {
+		this.name = name;
+	}
 
-    public void setBarcode(Long barcode) {
-        this.barcode = barcode;
-    }
+	public String getDescription() {
+		return description;
+	}
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
+	public void setBarcode(Long barcode) {
+		this.barcode = barcode;
+	}
 
-    public Long getBarcode() {
-        return barcode;
-    }
+	public void setDescription(String description) {
+		this.description = description;
+	}
 
-    public BigDecimal getUnitPrice() {
-        return unitPrice;
-    }
+	public Long getBarcode() {
+		return barcode;
+	}
 
-    public void setUnitPrice(BigDecimal unitPrice) {
-        this.unitPrice = unitPrice;
-    }
+	public BigDecimal getUnitPrice() {
+		return unitPrice;
+	}
 
-    public Manufacturer getManufacturer() {
-        return manufacturer;
-    }
+	public void setUnitPrice(BigDecimal unitPrice) {
+		this.unitPrice = unitPrice;
+	}
 
-    public void setManufacturer(Manufacturer manufacturer) {
-        this.manufacturer = manufacturer;
-    }
+	public Manufacturer getManufacturer() {
+		return manufacturer;
+	}
 
-    @Override
-    public Long getId() {
-        return id;
-    }
+	public void setManufacturer(Manufacturer manufacturer) {
+		this.manufacturer = manufacturer;
+	}
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+	@Override
+	public Long getId() {
+		return id;
+	}
 
-
+	public void setId(Long id) {
+		this.id = id;
+	}
 
 }

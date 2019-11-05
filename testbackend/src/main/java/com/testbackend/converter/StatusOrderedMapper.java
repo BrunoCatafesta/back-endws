@@ -12,14 +12,14 @@ import java.util.List;
 @org.mapstruct.Mapper(unmappedTargetPolicy = ReportingPolicy.IGNORE)
 public interface StatusOrderedMapper extends Mapper<StatusOrderedDTO, StatusOrdered> {
 
-    StatusOrderedMapper INSTANCE = Mappers.getMapper(StatusOrderedMapper.class);
+	StatusOrderedMapper INSTANCE = Mappers.getMapper(StatusOrderedMapper.class);
 
-    @Override
-    StatusOrdered convertDtoToEntity(StatusOrderedDTO dto);
+	@Override
+	StatusOrdered convertDtoToEntity(StatusOrderedDTO dto);
 
-    @Override
-    StatusOrderedDTO convertEntityToDto(StatusOrdered entity);
+	@Override
+	StatusOrderedDTO convertEntityToDto(StatusOrdered entity);
 
-    @Override
-    List<Dto> convertEntitiesToDTOs(List<StatusOrdered> allEntities);
+	@Override
+	List<Dto> convertEntitiesToDTOs(List<StatusOrdered> allEntities);
 }

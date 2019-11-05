@@ -10,7 +10,7 @@ import java.math.BigDecimal;
 public class OrderedItemBuilder implements Builder<OrderedItem> {
 
 	private OrderedItem orderedItem = new OrderedItem();
-	
+
 	public OrderedItemBuilder withOrdered(Ordered ordered) {
 		orderedItem.setOrdered(ordered);
 		return this;

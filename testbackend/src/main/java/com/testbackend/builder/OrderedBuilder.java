@@ -5,10 +5,10 @@ import com.testbackend.entity.*;
 
 import java.util.List;
 
-public class OrderedBuilder implements Builder<Ordered>{
-	
+public class OrderedBuilder implements Builder<Ordered> {
+
 	private Ordered ordered = new Ordered();
-	
+
 	public OrderedBuilder withConsumer(Consumer consumer) {
 		ordered.setConsumer(consumer);
 		return this;

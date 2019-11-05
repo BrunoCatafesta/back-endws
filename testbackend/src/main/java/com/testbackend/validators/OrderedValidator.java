@@ -14,24 +14,24 @@ import java.util.Optional;
 @Service
 public class OrderedValidator implements ValidatorService<Ordered> {
 
-    @Autowired
-    private ProductRepository productRepository;
+	@Autowired
+	private ProductRepository productRepository;
 
-    @Override
-    public void validateInsert(Ordered entity) {
-        validateExistenceProduct(entity);
-    }
-    
-    @Override
-    public void validateUpdate(Ordered entity) {
-    	validateExistenceProduct(entity);
-    }
+	@Override
+	public void validateInsert(Ordered entity) {
+		validateExistenceProduct(entity);
+	}
 
-    private void validateExistenceProduct(Ordered entity){
-        entity.getProducts().stream().forEach(itemProd ->{
-            Long idProduct = itemProd.getProduct().getId();
-            Optional<Product> product = productRepository.find(idProduct);
-            product.orElseThrow(() -> new TestBackEndRuntime(EnumException.PRODUCT_NOT_FOUND, idProduct));
-        });
-    }
+	@Override
+	public void validateUpdate(Ordered entity) {
+		validateExistenceProduct(entity);
+	}
+
+	private void validateExistenceProduct(Ordered entity) {
+		entity.getProducts().stream().forEach(itemProd -> {
+			Long idProduct = itemProd.getProduct().getId();
+			Optional<Product> product = productRepository.find(idProduct);
+			product.orElseThrow(() -> new TestBackEndRuntime(EnumException.PRODUCT_NOT_FOUND, idProduct));
+		});
+	}
 }

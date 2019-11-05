@@ -11,14 +11,14 @@ import java.util.List;
 @org.mapstruct.Mapper
 public interface ConsumerMapper extends Mapper<ConsumerDTO, Consumer> {
 
-    ConsumerMapper INSTANCE = Mappers.getMapper(ConsumerMapper.class);
+	ConsumerMapper INSTANCE = Mappers.getMapper(ConsumerMapper.class);
 
-    @Override
-    Consumer convertDtoToEntity(ConsumerDTO dto);
+	@Override
+	Consumer convertDtoToEntity(ConsumerDTO dto);
 
-    @Override
-    ConsumerDTO convertEntityToDto(Consumer entity);
+	@Override
+	ConsumerDTO convertEntityToDto(Consumer entity);
 
-    @Override
-    List<Dto> convertEntitiesToDTOs(List<Consumer> allEntities);
+	@Override
+	List<Dto> convertEntitiesToDTOs(List<Consumer> allEntities);
 }

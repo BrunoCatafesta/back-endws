@@ -20,15 +20,15 @@ import org.springframework.web.bind.annotation.RestController;
 @Api(value = "Product", description = "product operations")
 public class ProductController extends GenericControllerImpl<Long, ProductDTO, QueryProductDTO, Product> {
 
-    @Autowired
+	@Autowired
 	public ProductController(ProductService service) {
 		super(ProductMapper.INSTANCE, QueryProductMapper.INSTANCE, service);
-    }
+	}
 
-    @GetMapping("/{id}/detail")
-    ResponseEntity<ProductDTO> detail(@PathVariable(value = "id") Long id){
-        Product product = getGenericService().findOne(id);
-        return ResponseEntity.ok(getMapper().convertEntityToDto(product));
-    }
+	@GetMapping("/{id}/detail")
+	ResponseEntity<ProductDTO> detail(@PathVariable(value = "id") Long id) {
+		Product product = getGenericService().findOne(id);
+		return ResponseEntity.ok(getMapper().convertEntityToDto(product));
+	}
 
 }

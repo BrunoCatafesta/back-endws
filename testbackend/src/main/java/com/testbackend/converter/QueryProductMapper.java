@@ -9,9 +9,9 @@ import org.mapstruct.factory.Mappers;
 @org.mapstruct.Mapper(unmappedTargetPolicy = ReportingPolicy.IGNORE)
 public interface QueryProductMapper extends com.testbackend.architecture.converter.Mapper<QueryProductDTO, Product> {
 
-    QueryProductMapper INSTANCE = Mappers.getMapper(QueryProductMapper.class);
+	QueryProductMapper INSTANCE = Mappers.getMapper(QueryProductMapper.class);
 
-    Product convertDtoToEntity(ProductDTO dto);
+	Product convertDtoToEntity(ProductDTO dto);
 
-    QueryProductDTO convertEntityToDto(Product entity);
+	QueryProductDTO convertEntityToDto(Product entity);
 }

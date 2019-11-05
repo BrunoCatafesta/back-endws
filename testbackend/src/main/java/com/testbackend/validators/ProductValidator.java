@@ -10,24 +10,24 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class ProductValidator implements ValidatorService<Product> {
-	
+
 	@Autowired
 	private ManufacturerRepository manufacturerRepository;
-	
-	
+
 	@Override
 	public void validateInsert(Product entity) {
 		validateExistenceManufacturer(entity);
 	}
-	
+
 	@Override
 	public void validateUpdate(Product entity) {
 		validateExistenceManufacturer(entity);
 	}
-	
+
 	public void validateExistenceManufacturer(Product entity) {
 		Long idManufacturer = entity.getManufacturer().getId();
-		manufacturerRepository.find(idManufacturer).orElseThrow(() -> new TestBackEndRuntime(EnumException.MANUFACTURER_NOT_FOUND, idManufacturer));
+		manufacturerRepository.find(idManufacturer)
+				.orElseThrow(() -> new TestBackEndRuntime(EnumException.MANUFACTURER_NOT_FOUND, idManufacturer));
 	}
 
 }

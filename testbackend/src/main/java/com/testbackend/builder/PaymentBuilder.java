@@ -6,9 +6,9 @@ import com.testbackend.entity.Payment;
 import java.math.BigDecimal;
 
 public class PaymentBuilder implements Builder<Payment> {
-	
+
 	private Payment payment = new Payment();
-	
+
 	public PaymentBuilder withId(Long id) {
 		payment.setId(id);
 		return this;
@@ -18,7 +18,7 @@ public class PaymentBuilder implements Builder<Payment> {
 		payment.setMode(mode);
 		return this;
 	}
-	
+
 	public PaymentBuilder setInstallmentValue(BigDecimal installmentValue) {
 		payment.setInstallmentValue(installmentValue);
 		return this;

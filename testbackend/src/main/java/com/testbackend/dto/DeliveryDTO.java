@@ -7,25 +7,25 @@ import javax.validation.constraints.NotNull;
 
 public class DeliveryDTO implements Dto {
 
-    private Long id;
+	private Long id;
 
-    @NotNull
-    @NotBlank
-    private String mode;
+	@NotNull
+	@NotBlank
+	private String mode;
 
-    public String getMode() {
-        return mode;
-    }
+	public String getMode() {
+		return mode;
+	}
 
-    public void setMode(String mode) {
-        this.mode = mode;
-    }
+	public void setMode(String mode) {
+		this.mode = mode;
+	}
 
-    public Long getId() {
-        return id;
-    }
+	public Long getId() {
+		return id;
+	}
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+	public void setId(Long id) {
+		this.id = id;
+	}
 }

@@ -19,7 +19,7 @@ import javax.annotation.PostConstruct;
 import java.util.Collections;
 
 @SpringBootApplication
-@ComponentScan({"com.testbackend"})
+@ComponentScan({ "com.testbackend" })
 @EntityScan(basePackages = "com.testbackend.entity")
 @EnableSwagger2
 public class TestbackendApplication {
@@ -28,34 +28,28 @@ public class TestbackendApplication {
 	private StatusOrderedRepository statusOrderedRepository;
 
 	@PostConstruct
-	public void persistStatusOrdered(){
-        EnumStatusOrdered.getAllStatus()
-        	.forEach(status -> statusOrderedRepository
-        	.mergeOrPersist(status));
+	public void persistStatusOrdered() {
+		EnumStatusOrdered.getAllStatus().forEach(status -> statusOrderedRepository.mergeOrPersist(status));
 	}
 
 	public static void main(String[] args) {
 		SpringApplication.run(TestbackendApplication.class, args);
 	}
-	
+
 	@Bean
 	public Docket productApi() {
-		return new Docket(DocumentationType.SWAGGER_2).select()
-				.apis(RequestHandlerSelectors.basePackage("com"))
-				.build().apiInfo(getApiInfo());
+		return new Docket(DocumentationType.SWAGGER_2).select().apis(RequestHandlerSelectors.basePackage("com")).build()
+				.apiInfo(getApiInfo());
 	}
-	
-	
+
 	private ApiInfo getApiInfo() {
-	    return new ApiInfo(
-	            "Desafio Wealth Systems",
-	            "Desafio Wealth Systems para back-end",
-	            "0.0.1-SNAPSHOT",
-	            "",
-	            new Contact("Bruno Catafesta","URL","alex.bruno4@gmail.com"),
-	            "Catafesta",
-	            "",
-	            Collections.emptyList()
-	    );
+		return new ApiInfo("Desafio Wealth Systems", 
+				"Desafio Wealth Systems para back-end", 
+				"0.0.1-SNAPSHOT", "",
+				new Contact("Bruno Catafesta", 
+						"URL", 
+						"alex.bruno4@gmail.com"),
+						"Catafesta", "",
+				Collections.emptyList());
 	}
 }

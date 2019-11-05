@@ -8,26 +8,26 @@ import java.math.BigDecimal;
 
 public class OrderedItemDTO implements Dto {
 
-    @NotNull
-    private Long id;
+	@NotNull
+	private Long id;
 
-    @Positive
-    @NotNull
-    private BigDecimal units;
+	@Positive
+	@NotNull
+	private BigDecimal units;
 
-    public BigDecimal getUnits() {
-        return units;
-    }
+	public BigDecimal getUnits() {
+		return units;
+	}
 
-    public void setUnits(BigDecimal units) {
-        this.units = units;
-    }
+	public void setUnits(BigDecimal units) {
+		this.units = units;
+	}
 
-    public Long getId() {
-        return id;
-    }
+	public Long getId() {
+		return id;
+	}
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+	public void setId(Long id) {
+		this.id = id;
+	}
 }

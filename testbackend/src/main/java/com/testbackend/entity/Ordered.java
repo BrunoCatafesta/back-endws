@@ -13,98 +13,98 @@ import java.util.Objects;
 public class Ordered implements Identifier<Long> {
 	private static final long serialVersionUID = 1L;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sq_ordered")
-    @SequenceGenerator(name = "sq_ordered", allocationSize = 1, sequenceName="sq_ordered")
-    private Long id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sq_ordered")
+	@SequenceGenerator(name = "sq_ordered", allocationSize = 1, sequenceName = "sq_ordered")
+	private Long id;
 
 	@NotNull
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "status_ordered")
-    private StatusOrdered status;
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "status_ordered")
+	private StatusOrdered status;
 
 	@NotNull
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "consumer")
-    private Consumer consumer;
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "consumer")
+	private Consumer consumer;
 
 	@NotNull
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "payment")
-    private Payment payment;
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "payment")
+	private Payment payment;
 
-    @NotNull
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "delivery")
+	@NotNull
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "delivery")
 	private Delivery delivery;
 
-    @NotNull
-    @UniqueElements
-    @OneToMany(mappedBy = "ordered", fetch = FetchType.LAZY)
-    private List<OrderedItem> products;
+	@NotNull
+	@UniqueElements
+	@OneToMany(mappedBy = "ordered", fetch = FetchType.LAZY)
+	private List<OrderedItem> products;
 
-    public Consumer getConsumer() {
-        return consumer;
-    }
+	public Consumer getConsumer() {
+		return consumer;
+	}
 
-    public Payment getPayment() {
-        return payment;
-    }
+	public Payment getPayment() {
+		return payment;
+	}
 
-    public StatusOrdered getStatus() {
-        return status;
-    }
+	public StatusOrdered getStatus() {
+		return status;
+	}
 
-    public void setConsumer(Consumer consumer) {
-        this.consumer = consumer;
-    }
+	public void setConsumer(Consumer consumer) {
+		this.consumer = consumer;
+	}
 
-    public void setPayment(Payment payment) {
-        this.payment = payment;
-    }
+	public void setPayment(Payment payment) {
+		this.payment = payment;
+	}
 
-    public void setStatus(StatusOrdered status) {
-        this.status = status;
-    }
+	public void setStatus(StatusOrdered status) {
+		this.status = status;
+	}
 
-    public List<OrderedItem> getProducts() {
-        return products;
-    }
+	public List<OrderedItem> getProducts() {
+		return products;
+	}
 
-    public Delivery getDelivery() {
-        return delivery;
-    }
+	public Delivery getDelivery() {
+		return delivery;
+	}
 
-    public void setDelivery(Delivery delivery) {
-        this.delivery = delivery;
-    }
+	public void setDelivery(Delivery delivery) {
+		this.delivery = delivery;
+	}
 
-    public void setProducts(List<OrderedItem> products) {
-        this.products = products;
-    }
-    
-    public boolean isPending() {
-    	return Objects.nonNull(getStatus()) && isStatus(EnumStatusOrdered.PENDING);
-    }
-    
-    public boolean isCanceled() {
-    	return Objects.nonNull(getStatus()) && isStatus(EnumStatusOrdered.CANCELED);
-    }
-    
-    public boolean isConfirmed() {
-    	return Objects.nonNull(getStatus()) && isStatus(EnumStatusOrdered.CONFIRMED);
-    }
-    
-    private boolean isStatus(EnumStatusOrdered enumStatusOrdered) {
-    	return enumStatusOrdered.getStatusOrdered().getId().equals(getStatus().getId());
-    }
+	public void setProducts(List<OrderedItem> products) {
+		this.products = products;
+	}
 
-    @Override
-    public Long getId() {
-        return id;
-    }
+	public boolean isPending() {
+		return Objects.nonNull(getStatus()) && isStatus(EnumStatusOrdered.PENDING);
+	}
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+	public boolean isCanceled() {
+		return Objects.nonNull(getStatus()) && isStatus(EnumStatusOrdered.CANCELED);
+	}
+
+	public boolean isConfirmed() {
+		return Objects.nonNull(getStatus()) && isStatus(EnumStatusOrdered.CONFIRMED);
+	}
+
+	private boolean isStatus(EnumStatusOrdered enumStatusOrdered) {
+		return enumStatusOrdered.getStatusOrdered().getId().equals(getStatus().getId());
+	}
+
+	@Override
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
 }

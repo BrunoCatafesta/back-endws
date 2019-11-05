@@ -13,50 +13,48 @@ import javax.validation.constraints.NotNull;
 public class StatusOrdered implements Identifier<Long> {
 	private static final long serialVersionUID = 1L;
 
-    @Id
-    private Long id;
+	@Id
+	private Long id;
 
-    @NotEmpty
-    @NotNull
+	@NotEmpty
+	@NotNull
 	private String status;
 
-    @NotEmpty
-    @NotNull
+	@NotEmpty
+	@NotNull
 	private String description;
 
+	public StatusOrdered() {
 
-    public StatusOrdered(){
+	}
 
-    }
+	public StatusOrdered(Long id, String status, String description) {
+		this.status = status;
+		this.id = id;
+		this.description = description;
+	}
 
-    public StatusOrdered(Long id, String status, String description) {
-        this.status = status;
-        this.id = id;
-        this.description = description;
-    }
+	public void setStatus(String status) {
+		this.status = status;
+	}
 
+	public Long getId() {
+		return id;
+	}
 
-    public void setStatus(String status) {
-        this.status = status;
-    }
+	public void setId(Long id) {
+		this.id = id;
+	}
 
-    public Long getId() {
-        return id;
-    }
+	public String getStatus() {
+		return status;
+	}
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+	public String getDescription() {
+		return description;
+	}
 
-    public String getStatus() {
-        return status;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
+	public void setDescription(String description) {
+		this.description = description;
+	}
 }

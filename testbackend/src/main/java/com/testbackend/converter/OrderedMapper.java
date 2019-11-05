@@ -10,26 +10,21 @@ import org.mapstruct.factory.Mappers;
 
 import java.util.List;
 
-
-@org.mapstruct.Mapper(uses = {
-        ConsumerMapper.class,
-        DeliveryMapper.class,
-        PaymentMapper.class,
-        OrderedItemMapper.class},
-        unmappedTargetPolicy = ReportingPolicy.IGNORE)
+@org.mapstruct.Mapper(uses = { ConsumerMapper.class, DeliveryMapper.class, PaymentMapper.class,
+		OrderedItemMapper.class }, unmappedTargetPolicy = ReportingPolicy.IGNORE)
 public interface OrderedMapper extends Mapper<OrderedDTO, Ordered> {
 
-    OrderedMapper INSTANCE = Mappers.getMapper(OrderedMapper.class);
+	OrderedMapper INSTANCE = Mappers.getMapper(OrderedMapper.class);
 
-    @Override
-    @Mapping(source = "status", target = "status.status")
-    Ordered convertDtoToEntity(OrderedDTO dto);
+	@Override
+	@Mapping(source = "status", target = "status.status")
+	Ordered convertDtoToEntity(OrderedDTO dto);
 
-    @Override
-    @Mapping(source = "status.status", target = "status")
-    OrderedDTO convertEntityToDto(Ordered entity);
+	@Override
+	@Mapping(source = "status.status", target = "status")
+	OrderedDTO convertEntityToDto(Ordered entity);
 
-    @Override
-    List<Dto> convertEntitiesToDTOs(List<Ordered> allEntities);
+	@Override
+	List<Dto> convertEntitiesToDTOs(List<Ordered> allEntities);
 
 }

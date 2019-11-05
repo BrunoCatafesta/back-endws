@@ -11,14 +11,14 @@ import java.util.List;
 @org.mapstruct.Mapper
 public interface ManufacturerMapper extends Mapper<ManufacturerDTO, Manufacturer> {
 
-    ManufacturerMapper INSTANCE = Mappers.getMapper(ManufacturerMapper.class);
+	ManufacturerMapper INSTANCE = Mappers.getMapper(ManufacturerMapper.class);
 
-    @Override
-    Manufacturer convertDtoToEntity(ManufacturerDTO dto);
+	@Override
+	Manufacturer convertDtoToEntity(ManufacturerDTO dto);
 
-    @Override
-    ManufacturerDTO convertEntityToDto(Manufacturer entity);
+	@Override
+	ManufacturerDTO convertEntityToDto(Manufacturer entity);
 
-    @Override
-    List<Dto> convertEntitiesToDTOs(List<Manufacturer> allEntities);
+	@Override
+	List<Dto> convertEntitiesToDTOs(List<Manufacturer> allEntities);
 }

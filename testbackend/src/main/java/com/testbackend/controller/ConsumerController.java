@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 @Api(value = "Consumer", description = "consumer operations")
 public class ConsumerController extends GenericControllerImpl<Long, ConsumerDTO, ConsumerDTO, Consumer> {
 
-    @Autowired
-    public ConsumerController(ConsumerService consumerService) {
-        super(ConsumerMapper.INSTANCE, ConsumerMapper.INSTANCE, consumerService);
-    }
+	@Autowired
+	public ConsumerController(ConsumerService consumerService) {
+		super(ConsumerMapper.INSTANCE, ConsumerMapper.INSTANCE, consumerService);
+	}
 }

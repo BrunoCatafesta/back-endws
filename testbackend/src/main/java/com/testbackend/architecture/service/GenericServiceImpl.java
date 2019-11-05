@@ -9,11 +9,10 @@ import java.util.List;
 
 public class GenericServiceImpl<I extends Number, E extends Identifier<I>> implements GenericService<I, E> {
 
-	
 	private GenericDAO<I, E> dao;
 
 	private ValidatorService<E> validatorService;
-	
+
 	public GenericServiceImpl(GenericDAO<I, E> dao, ValidatorService<E> validatorService) {
 		this.dao = dao;
 		this.validatorService = validatorService;
@@ -21,15 +20,15 @@ public class GenericServiceImpl<I extends Number, E extends Identifier<I>> imple
 
 	@Override
 	public E insert(E entity) {
-        validatorService.validateInsert(entity);
+		validatorService.validateInsert(entity);
 		prepareForInsert(entity);
 		insertDependents(entity);
-	    entity = dao.insert(entity);
-	    insertDetails(entity);
-	    return entity;
+		entity = dao.insert(entity);
+		insertDetails(entity);
+		return entity;
 	}
 
-    @Override
+	@Override
 	public E update(E entity) {
 		prepareForUpdate(entity);
 		validatorService.validateInsert(entity);
@@ -51,13 +50,17 @@ public class GenericServiceImpl<I extends Number, E extends Identifier<I>> imple
 		dao.delete(id);
 	}
 
-    public void insertDetails(E entity) {}
+	public void insertDetails(E entity) {
+	}
 
-	public void insertDependents(E entity) {}
-	
-	public void prepareForInsert(E entity){};
+	public void insertDependents(E entity) {
+	}
 
-	public void prepareForUpdate(E entity){};
+	public void prepareForInsert(E entity) {
+	};
+
+	public void prepareForUpdate(E entity) {
+	};
 
 	public ValidatorService<E> getValidatorService() {
 		return validatorService;

@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 @Api(value = "Manufacturer", description = "manufacturer operations")
 public class ManufacturerController extends GenericControllerImpl<Long, ManufacturerDTO, ManufacturerDTO, Manufacturer> {
 
-    @Autowired
-    public ManufacturerController(MunufacturerService manufacturerService) {
-        super(ManufacturerMapper.INSTANCE, ManufacturerMapper.INSTANCE, manufacturerService);
-    }
+	@Autowired
+	public ManufacturerController(MunufacturerService manufacturerService) {
+		super(ManufacturerMapper.INSTANCE, ManufacturerMapper.INSTANCE, manufacturerService);
+	}
 }

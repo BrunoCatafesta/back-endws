@@ -49,8 +49,6 @@ dependencies {
 	compile('io.springfox:springfox-swagger2:2.9.2')
     compile "io.springfox:springfox-swagger-ui:2.9.2"
     
-
-
 	runtime "org.postgresql:postgresql:42.2.5"
 	runtime "org.apache.tomcat:tomcat-jdbc:8.5.0"
 	runtime "org.apache.tomcat.embed:tomcat-embed-logging-log4j:8.5.0"

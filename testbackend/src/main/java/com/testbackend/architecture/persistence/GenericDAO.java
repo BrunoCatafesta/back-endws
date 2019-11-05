@@ -25,8 +25,8 @@ public interface GenericDAO<IDENTIFIER extends Number, T extends Identifier<IDEN
 
 	Optional<T> find(IDENTIFIER id);
 
-    T mergeOrPersist(T entity);
+	T mergeOrPersist(T entity);
 
-    void delete(IDENTIFIER id);
+	void delete(IDENTIFIER id);
 
 }

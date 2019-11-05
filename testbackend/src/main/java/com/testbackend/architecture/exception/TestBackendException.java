@@ -4,11 +4,11 @@ import java.util.Formatter;
 
 public interface TestBackendException {
 
-    String getErro();
+	String getErro();
 
-    default String getFormatedError(Object... param){
-        StringBuilder sbuf = new StringBuilder();
-        Formatter fmt = new Formatter(sbuf).format(this.getErro(), param);
-        return sbuf.toString();
-    }
+	default String getFormatedError(Object... param) {
+		StringBuilder sbuf = new StringBuilder();
+		Formatter fmt = new Formatter(sbuf).format(this.getErro(), param);
+		return sbuf.toString();
+	}
 }

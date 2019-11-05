@@ -15,23 +15,23 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 @RestControllerAdvice
 public class RestExceptionHandler extends ResponseEntityExceptionHandler {
 
-    @ExceptionHandler(TestBackEndRuntime.class)
-    private ResponseEntity<ErrorDTO> handleTestBackendRuntime(TestBackEndRuntime ex){
-        ErrorDTO error = new ErrorDTO(HttpStatus.BAD_REQUEST, "Bad Request", ex.getMessage());
-        return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
-    }
+	@ExceptionHandler(TestBackEndRuntime.class)
+	private ResponseEntity<ErrorDTO> handleTestBackendRuntime(TestBackEndRuntime ex) {
+		ErrorDTO error = new ErrorDTO(HttpStatus.BAD_REQUEST, "Bad Request", ex.getMessage());
+		return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
+	}
 
-    @Override
-    protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex, HttpHeaders headers, HttpStatus status, WebRequest request) {
-        ErrorDTO error = new ErrorDTO(HttpStatus.BAD_REQUEST, "Validation Error", ex.getBindingResult().toString());
-        return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
-    }
+	@Override
+	protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex,
+			HttpHeaders headers, HttpStatus status, WebRequest request) {
+		ErrorDTO error = new ErrorDTO(HttpStatus.BAD_REQUEST, "Validation Error", ex.getBindingResult().toString());
+		return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
+	}
 
-    @ExceptionHandler(TransactionSystemException.class)
-    private ResponseEntity<ErrorDTO> handleTransactionSystemException(TransactionSystemException ex){
-        ErrorDTO error = new ErrorDTO(HttpStatus.BAD_REQUEST, "Bad Request", ex.getMessage());
-        return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
-    }
-
+	@ExceptionHandler(TransactionSystemException.class)
+	private ResponseEntity<ErrorDTO> handleTransactionSystemException(TransactionSystemException ex) {
+		ErrorDTO error = new ErrorDTO(HttpStatus.BAD_REQUEST, "Bad Request", ex.getMessage());
+		return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
+	}
 
 }

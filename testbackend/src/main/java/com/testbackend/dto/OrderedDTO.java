@@ -6,71 +6,70 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import java.util.List;
 
-
 public class OrderedDTO implements Dto {
 
-    private Long id;
+	private Long id;
 
-    @NotNull
-    private ConsumerDTO consumer;
+	@NotNull
+	private ConsumerDTO consumer;
 
-    @NotNull
-    private DeliveryDTO delivery;
+	@NotNull
+	private DeliveryDTO delivery;
 
-    @NotNull
-    private PaymentDTO payment;
+	@NotNull
+	private PaymentDTO payment;
 
-    private String status;
+	private String status;
 
-    @NotNull
-    @NotEmpty
-    private List<OrderedItemDTO> products;
+	@NotNull
+	@NotEmpty
+	private List<OrderedItemDTO> products;
 
-    public String getStatus() {
+	public String getStatus() {
 		return status;
 	}
-    
-    public void setStatus(String status) {
+
+	public void setStatus(String status) {
 		this.status = status;
 	}
 
-    public Long getId() {
-        return id;
-    }
+	public Long getId() {
+		return id;
+	}
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+	public void setId(Long id) {
+		this.id = id;
+	}
 
-    public ConsumerDTO getConsumer() {
-        return consumer;
-    }
+	public ConsumerDTO getConsumer() {
+		return consumer;
+	}
 
-    public void setConsumer(ConsumerDTO consumer) {
-        this.consumer = consumer;
-    }
+	public void setConsumer(ConsumerDTO consumer) {
+		this.consumer = consumer;
+	}
 
-    public DeliveryDTO getDelivery() {
-        return delivery;
-    }
+	public DeliveryDTO getDelivery() {
+		return delivery;
+	}
 
-    public void setDelivery(DeliveryDTO delivery) {
-        this.delivery = delivery;
-    }
+	public void setDelivery(DeliveryDTO delivery) {
+		this.delivery = delivery;
+	}
 
-    public PaymentDTO getPayment() {
-        return payment;
-    }
+	public PaymentDTO getPayment() {
+		return payment;
+	}
 
-    public void setPayment(PaymentDTO payment) {
-        this.payment = payment;
-    }
+	public void setPayment(PaymentDTO payment) {
+		this.payment = payment;
+	}
 
-    public List<OrderedItemDTO> getProducts() {
-        return products;
-    }
+	public List<OrderedItemDTO> getProducts() {
+		return products;
+	}
 
-    public void setProducts(List<OrderedItemDTO> products) {
-        this.products = products;
-    }
+	public void setProducts(List<OrderedItemDTO> products) {
+		this.products = products;
+	}
 }

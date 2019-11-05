@@ -12,16 +12,16 @@ import java.util.List;
 @Mapper(unmappedSourcePolicy = ReportingPolicy.IGNORE)
 public interface OrderedItemMapper extends com.testbackend.architecture.converter.Mapper<OrderedItemDTO, OrderedItem> {
 
-    @Override
-    @Mapping(ignore = true, target = "ordered")
-    @Mapping(ignore = true, target = "id")
-    @Mapping(source = "id", target = "product.id")
-    OrderedItem convertDtoToEntity(OrderedItemDTO dto);
+	@Override
+	@Mapping(ignore = true, target = "ordered")
+	@Mapping(ignore = true, target = "id")
+	@Mapping(source = "id", target = "product.id")
+	OrderedItem convertDtoToEntity(OrderedItemDTO dto);
 
-    @Override
-    @Mapping(source = "product.id", target = "id")
-    OrderedItemDTO convertEntityToDto(OrderedItem entity);
+	@Override
+	@Mapping(source = "product.id", target = "id")
+	OrderedItemDTO convertEntityToDto(OrderedItem entity);
 
-    @Override
-    List<Dto> convertEntitiesToDTOs(List<OrderedItem> allEntities);
+	@Override
+	List<Dto> convertEntitiesToDTOs(List<OrderedItem> allEntities);
 }

@@ -19,61 +19,61 @@ import java.util.stream.Collectors;
 @Service
 public class OrderedService extends GenericServiceImpl<Long, Ordered> {
 
-    @Autowired
-    private ConsumerService consumerService;
-    @Autowired
-    private PaymentService paymentService;
-    @Autowired
-    private DeliveryService deliveryService;
-    @Autowired
-    private OrderedItemService orderedItemService;
-    @Autowired
-    private InstallmentCalculator installmentCalculator;
-    @Autowired
-    private ManipulatorStatusOrdered manipulatorStatusOrdered;
+	@Autowired
+	private ConsumerService consumerService;
+	@Autowired
+	private PaymentService paymentService;
+	@Autowired
+	private DeliveryService deliveryService;
+	@Autowired
+	private OrderedItemService orderedItemService;
+	@Autowired
+	private InstallmentCalculator installmentCalculator;
+	@Autowired
+	private ManipulatorStatusOrdered manipulatorStatusOrdered;
 
-    @Autowired
-    public OrderedService(OrderedRepository orderedRepository, OrderedValidator orderedValidator) {
-        super(orderedRepository, orderedValidator);
-    }
+	@Autowired
+	public OrderedService(OrderedRepository orderedRepository, OrderedValidator orderedValidator) {
+		super(orderedRepository, orderedValidator);
+	}
 
-    @Override
-    public void insertDependents(Ordered entity) {
-        entity.setPayment(paymentService.insert(entity.getPayment()));
-        entity.setConsumer(consumerService.insert(entity.getConsumer()));
-        entity.setDelivery(deliveryService.insert(entity.getDelivery()));
-    }
-    
-    @Override
-    public void insertDetails(Ordered entity) {
-    	insertOrderedItem(entity);
-    }
-    
-    private List<OrderedItem> insertOrderedItem(Ordered entity) {
-        return entity.getProducts().stream().map(item -> {
-        	item.setOrdered(entity);
-        	return orderedItemService.insert(item);	
-        }).collect(Collectors.toList());
-    }
+	@Override
+	public void insertDependents(Ordered entity) {
+		entity.setPayment(paymentService.insert(entity.getPayment()));
+		entity.setConsumer(consumerService.insert(entity.getConsumer()));
+		entity.setDelivery(deliveryService.insert(entity.getDelivery()));
+	}
 
-    @Override
-    public void prepareForInsert(Ordered entity) {
-    	BigDecimal installmentValue = installmentCalculator.calculateInstallment(entity);
-        entity.setStatus(EnumStatusOrdered.PENDING.getStatusOrdered());
-        entity.getPayment().setInstallmentValue(installmentValue);
-    }
+	@Override
+	public void insertDetails(Ordered entity) {
+		insertOrderedItem(entity);
+	}
 
-    public void cancelOrdered(Long idOrdered) {
-    	manipulatorStatusOrdered.applyStatus(idOrdered, EnumStatusOrdered.CANCELED);
-    }
-    
-    public void confirmOrdered(Long idOrdered) {
-    	manipulatorStatusOrdered.applyStatus(idOrdered, EnumStatusOrdered.CONFIRMED);
-    }
-    
-    @Override
-    public Ordered update(Ordered entity) {
-    	throw new TestBackEndRuntime(" Operation not allowed. ");
-    }
+	private List<OrderedItem> insertOrderedItem(Ordered entity) {
+		return entity.getProducts().stream().map(item -> {
+			item.setOrdered(entity);
+			return orderedItemService.insert(item);
+		}).collect(Collectors.toList());
+	}
+
+	@Override
+	public void prepareForInsert(Ordered entity) {
+		BigDecimal installmentValue = installmentCalculator.calculateInstallment(entity);
+		entity.setStatus(EnumStatusOrdered.PENDING.getStatusOrdered());
+		entity.getPayment().setInstallmentValue(installmentValue);
+	}
+
+	public void cancelOrdered(Long idOrdered) {
+		manipulatorStatusOrdered.applyStatus(idOrdered, EnumStatusOrdered.CANCELED);
+	}
+
+	public void confirmOrdered(Long idOrdered) {
+		manipulatorStatusOrdered.applyStatus(idOrdered, EnumStatusOrdered.CONFIRMED);
+	}
+
+	@Override
+	public Ordered update(Ordered entity) {
+		throw new TestBackEndRuntime(" Operation not allowed. ");
+	}
 
 }

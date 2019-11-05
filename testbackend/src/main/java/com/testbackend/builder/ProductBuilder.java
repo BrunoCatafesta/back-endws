@@ -8,7 +8,7 @@ import com.testbackend.entity.Product;
 import java.math.BigDecimal;
 
 public class ProductBuilder implements Builder<Product> {
-	
+
 	private Product product = new Product();
 
 	public ProductBuilder withName(String name) {
@@ -37,7 +37,7 @@ public class ProductBuilder implements Builder<Product> {
 	}
 
 	public ProductBuilder withOrdered(Ordered ordered) {
-		//product.setOrdered(ordered);
+		// product.setOrdered(ordered);
 		return this;
 	}
 
@@ -50,7 +50,5 @@ public class ProductBuilder implements Builder<Product> {
 	public Product builde() {
 		return product;
 	}
-	
-	
 
 }

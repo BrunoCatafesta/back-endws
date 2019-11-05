@@ -29,7 +29,7 @@ public class OrderedController extends GenericControllerImpl <Long, OrderedDTO, 
     }
 
     @PutMapping("/{id}/cancel")
-    ResponseEntity<?> cancel(@PathVariable(value = "id") Long id){
+    ResponseEntity<OrderedDTO> cancel(@PathVariable(value = "id") Long id){
         ((OrderedService) getGenericService()).cancelOrdered(id);
         Ordered ordered = orderedRepository.find(id).get();
         return ResponseEntity.ok(getMapper().convertEntityToDto(ordered));

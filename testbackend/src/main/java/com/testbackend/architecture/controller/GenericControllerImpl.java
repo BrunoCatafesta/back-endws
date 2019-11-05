@@ -21,7 +21,8 @@ public class GenericControllerImpl<I extends Number, DTO extends Dto, DTOQUERY e
 
 	private GenericService<I, E> genericService;
 
-	public GenericControllerImpl(Mapper<DTO, E> mapper, Mapper<DTOQUERY, E> mapperQuery, GenericService<I, E> genericService) {
+	public GenericControllerImpl(Mapper<DTO, E> mapper, Mapper<DTOQUERY, E> mapperQuery,
+			GenericService<I, E> genericService) {
 		this.mapper = mapper;
 		this.genericService = genericService;
 		this.mapperQuery = mapperQuery;
@@ -35,7 +36,7 @@ public class GenericControllerImpl<I extends Number, DTO extends Dto, DTOQUERY e
 	}
 
 	@Override
-	public ResponseEntity<DTO> update(@PathVariable(value = "id") I id,@RequestBody @Valid DTO dto) {
+	public ResponseEntity<DTO> update(@PathVariable(value = "id") I id, @RequestBody @Valid DTO dto) {
 		E entity = mapper.convertDtoToEntity(dto);
 		entity.setId(id);
 		entity = genericService.update(entity);
@@ -45,9 +46,9 @@ public class GenericControllerImpl<I extends Number, DTO extends Dto, DTOQUERY e
 	@Override
 	public ResponseEntity<Page<DTOQUERY>> findAll(Integer pageNo, Integer pageSize, String sortBy) {
 		Pageable paging = PageRequest.of(pageNo, pageSize, Sort.by(sortBy));
-		List<E> entities = genericService.findAll(paging);	
+		List<E> entities = genericService.findAll(paging);
 		List<DTOQUERY> dtos = (List<DTOQUERY>) mapperQuery.convertEntitiesToDTOs(entities);
-		Page<DTOQUERY> pageDto = new PageImpl<>(dtos, paging, dtos.size()); 
+		Page<DTOQUERY> pageDto = new PageImpl<>(dtos, paging, dtos.size());
 		return (ResponseEntity<Page<DTOQUERY>>) ResponseEntity.ok(pageDto);
 	}
 
@@ -70,7 +71,7 @@ public class GenericControllerImpl<I extends Number, DTO extends Dto, DTOQUERY e
 		return mapper;
 	}
 
-    public Mapper<DTOQUERY, E> getMapperQuery() {
-        return mapperQuery;
-    }
+	public Mapper<DTOQUERY, E> getMapperQuery() {
+		return mapperQuery;
+	}
 }

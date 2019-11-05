@@ -5,12 +5,12 @@ import com.testbackend.dto.ProductDTO;
 import com.testbackend.entity.Product;
 import org.mapstruct.factory.Mappers;
 
-@org.mapstruct.Mapper(uses = {ManufacturerMapper.class})
+@org.mapstruct.Mapper(uses = { ManufacturerMapper.class })
 public interface ProductMapper extends Mapper<ProductDTO, Product> {
 
-    ProductMapper INSTANCE = Mappers.getMapper(ProductMapper.class);
+	ProductMapper INSTANCE = Mappers.getMapper(ProductMapper.class);
 
-    @Override
-    Product convertDtoToEntity(ProductDTO dto);
+	@Override
+	Product convertDtoToEntity(ProductDTO dto);
 
 }

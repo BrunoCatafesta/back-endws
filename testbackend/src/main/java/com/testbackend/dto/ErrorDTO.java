@@ -6,34 +6,34 @@ import java.time.LocalDateTime;
 
 public class ErrorDTO {
 
-    private HttpStatus httpStatus;
+	private HttpStatus httpStatus;
 
-    private LocalDateTime timestamp;
+	private LocalDateTime timestamp;
 
-    private String message;
+	private String message;
 
-    private String details;
+	private String details;
 
-    public ErrorDTO(HttpStatus httpStatus, String message, String details) {
-        this.httpStatus = httpStatus;
-        this.timestamp = LocalDateTime.now();
-        this.message = message;
-        this.details = details;
-    }
+	public ErrorDTO(HttpStatus httpStatus, String message, String details) {
+		this.httpStatus = httpStatus;
+		this.timestamp = LocalDateTime.now();
+		this.message = message;
+		this.details = details;
+	}
 
-    public HttpStatus getHttpStatus() {
-        return httpStatus;
-    }
+	public HttpStatus getHttpStatus() {
+		return httpStatus;
+	}
 
-    public LocalDateTime getTimestamp() {
-        return timestamp;
-    }
+	public LocalDateTime getTimestamp() {
+		return timestamp;
+	}
 
-    public String getMessage() {
-        return message;
-    }
+	public String getMessage() {
+		return message;
+	}
 
-    public String getDetails() {
-        return details;
-    }
+	public String getDetails() {
+		return details;
+	}
 }

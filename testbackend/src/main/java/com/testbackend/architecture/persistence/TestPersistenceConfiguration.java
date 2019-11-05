@@ -19,7 +19,7 @@ import javax.sql.DataSource;
 import java.sql.SQLException;
 
 @Configuration
-@EnableJpaRepositories(basePackages = {"com.testbackend.persistence", "com.testbackend.architecture.persistence"})
+@EnableJpaRepositories(basePackages = { "com.testbackend.persistence", "com.testbackend.architecture.persistence" })
 @EnableTransactionManagement
 public class TestPersistenceConfiguration {
 
@@ -34,15 +34,14 @@ public class TestPersistenceConfiguration {
 	@Profile("test")
 	public EntityManagerFactory entityManagerFactory() throws SQLException {
 		HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
-        LocalContainerEntityManagerFactoryBean factory = new LocalContainerEntityManagerFactoryBean();
-        vendorAdapter.setGenerateDdl(true);
-        factory.setJpaVendorAdapter(vendorAdapter);
-        factory.setPackagesToScan("com/testbackend/entity");
-        factory.setDataSource(dataSource());
-        factory.afterPropertiesSet();
-        return factory.getObject();
+		LocalContainerEntityManagerFactoryBean factory = new LocalContainerEntityManagerFactoryBean();
+		vendorAdapter.setGenerateDdl(true);
+		factory.setJpaVendorAdapter(vendorAdapter);
+		factory.setPackagesToScan("com/testbackend/entity");
+		factory.setDataSource(dataSource());
+		factory.afterPropertiesSet();
+		return factory.getObject();
 	}
-	
 
 	@Bean
 	@Profile("test")
@@ -63,6 +62,5 @@ public class TestPersistenceConfiguration {
 	public HibernateExceptionTranslator hibernateExceptionTranslator() {
 		return new HibernateExceptionTranslator();
 	}
-
 
 }

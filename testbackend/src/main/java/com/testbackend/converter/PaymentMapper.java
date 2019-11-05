@@ -11,14 +11,14 @@ import java.util.List;
 @org.mapstruct.Mapper
 public interface PaymentMapper extends Mapper<PaymentDTO, Payment> {
 
-    PaymentMapper INSTANCE = Mappers.getMapper(PaymentMapper.class);
+	PaymentMapper INSTANCE = Mappers.getMapper(PaymentMapper.class);
 
-    @Override
-    Payment convertDtoToEntity(PaymentDTO dto);
+	@Override
+	Payment convertDtoToEntity(PaymentDTO dto);
 
-    @Override
-    PaymentDTO convertEntityToDto(Payment entity);
+	@Override
+	PaymentDTO convertEntityToDto(Payment entity);
 
-    @Override
-    List<Dto> convertEntitiesToDTOs(List<Payment> allEntities);
+	@Override
+	List<Dto> convertEntitiesToDTOs(List<Payment> allEntities);
 }

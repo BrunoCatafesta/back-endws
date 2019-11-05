@@ -9,9 +9,11 @@ import java.lang.annotation.*;
 @Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface Phone {
-	
+
 	String message() default "Phone invalid required +xxxxxxxxxxxx";
+
 	Class<?>[] groups() default {};
-	Class<? extends Payload>[] payload() default { };
+
+	Class<? extends Payload>[] payload() default {};
 
 }

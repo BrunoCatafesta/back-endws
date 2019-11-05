@@ -11,14 +11,14 @@ import java.util.List;
 @org.mapstruct.Mapper
 public interface DeliveryMapper extends Mapper<DeliveryDTO, Delivery> {
 
-    DeliveryMapper INSTANCE = Mappers.getMapper(DeliveryMapper.class);
+	DeliveryMapper INSTANCE = Mappers.getMapper(DeliveryMapper.class);
 
-    @Override
-    Delivery convertDtoToEntity(DeliveryDTO dto);
+	@Override
+	Delivery convertDtoToEntity(DeliveryDTO dto);
 
-    @Override
-    DeliveryDTO convertEntityToDto(Delivery entity);
+	@Override
+	DeliveryDTO convertEntityToDto(Delivery entity);
 
-    @Override
-    List<Dto> convertEntitiesToDTOs(List<Delivery> allEntities);
+	@Override
+	List<Dto> convertEntitiesToDTOs(List<Delivery> allEntities);
 }
