@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+	xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+
+	<changeSet author="Bruno Catafesta" id="001_catafesta">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="consumer" />
+			</not>
+		</preConditions>
+		<createTable tableName="consumer">
+			<column name="id" type="BIGINT">
+				<constraints nullable="false" primaryKey="true"
+					primaryKeyName="pk_consumer_id" />
+			</column>
+			<column name="phone" type="varchar(15)" >
+				<constraints nullable="false"/>
+			</column>
+			<column name="name" type="varchar(80)" >
+				<constraints nullable="false"/>
+			</column>
+			<column name="email" type="varchar(70)" >
+				<constraints nullable="false"/>
+			</column>
+		</createTable>
+	</changeSet>
+
+	<changeSet author="Bruno Catafesta" id="002_catafesta">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="manufacturer" />
+			</not>
+		</preConditions>
+		<createTable tableName="manufacturer">
+			<column name="id" type="BIGINT">
+				<constraints nullable="false" primaryKey="true"
+					primaryKeyName="pk_manufacturer_id" />
+			</column>
+			<column name="name" type="varchar(150)" >
+				<constraints nullable="false"/>
+			</column>
+		</createTable>
+	</changeSet>
+	
+	<changeSet author="Bruno Catafesta" id="003_catafesta">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="product" />
+			</not>
+		</preConditions>
+		<createTable tableName="product">
+			<column name="id" type="BIGINT">
+				<constraints nullable="false" primaryKey="true"
+					primaryKeyName="pk_product_id" />
+			</column>
+			<column name="name" type="varchar(250)" >
+				<constraints nullable="false"/>
+			</column>
+			<column name="description" type="varchar(150)" >
+				<constraints nullable="false"/>
+			</column>
+			<column name="barcode" type="BIGINT" >
+				<constraints nullable="false"/>
+			</column>
+			<column name="unit_price" type="NUMBER(10,5)" >
+				<constraints nullable="false"/>
+			</column>
+			<column name="manufacturer" type="BIGINT" >
+				<constraints nullable="false" ></constraints>
+			</column>
+		</createTable>
+	</changeSet>
+
+	<changeSet author="Bruno Catafesta" id="004_catafesta">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="payment" />
+			</not>
+		</preConditions>
+		<createTable tableName="payment">
+			<column name="id" type="BIGINT">
+				<constraints nullable="false" primaryKey="true"
+							 primaryKeyName="pk_payment_id" />
+			</column>
+			<column name="mode" type="varchar(150)" >
+				<constraints nullable="false"/>
+			</column>
+			<column name="installments" type="NUMBER(5)" >
+				<constraints nullable="false"/>
+			</column>
+			<column name="installment_value" type="NUMBER(10,5)" >
+				<constraints nullable="false"/>
+			</column>
+		</createTable>
+	</changeSet>
+
+	<changeSet author="Bruno Catafesta" id="005_catafesta">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="delivery" />
+			</not>
+		</preConditions>
+		<createTable tableName="delivery">
+			<column name="id" type="BIGINT">
+				<constraints nullable="false" primaryKey="true"
+							 primaryKeyName="pk_delivery_id" />
+			</column>
+			<column name="mode" type="varchar(150)" >
+				<constraints nullable="false"/>
+			</column>
+		</createTable>
+	</changeSet>
+
+	<changeSet author="Bruno Catafesta" id="006_catafesta">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="status_ordered" />
+			</not>
+		</preConditions>
+		<createTable tableName="status_ordered">
+			<column name="id" type="BIGINT">
+				<constraints nullable="false" primaryKey="true"
+							 primaryKeyName="pk_status_ordered_id" />
+			</column>
+			<column name="status" type="varchar(50)" >
+				<constraints nullable="false"/>
+			</column>
+
+            <column name="description" type="varchar(50)" >
+                <constraints nullable="false"/>
+            </column>
+		</createTable>
+	</changeSet>
+
+	<changeSet author="Bruno Catafesta" id="007_catafesta">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="ordered" />
+			</not>
+		</preConditions>
+		<createTable tableName="ordered">
+			<column name="id" type="BIGINT">
+				<constraints nullable="false" primaryKey="true"
+							 primaryKeyName="pk_ordered_id" />
+			</column>
+			<column name="status_ordered" type="BIGINT" >
+				<constraints nullable="false"/>
+			</column>
+			<column name="payment" type="BIGINT" >
+				<constraints nullable="false"/>
+			</column>
+			<column name="consumer" type="BIGINT" >
+				<constraints nullable="false"/>
+			</column>
+            <column name="delivery" type="BIGINT" >
+                <constraints nullable="false"/>
+            </column>
+		</createTable>
+	</changeSet>
+
+	<changeSet author="Bruno Catafesta" id="008_catafesta">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="ordered_item" />
+			</not>
+		</preConditions>
+		<createTable tableName="ordered_item">
+			<column name="id" type="BIGINT">
+				<constraints nullable="false" primaryKey="true"
+							 primaryKeyName="pk_ordered_item_id" />
+			</column>
+			<column name="ordered" type="BIGINT" >
+				<constraints nullable="false"/>
+			</column>
+			<column name="product" type="BIGINT" >
+				<constraints nullable="false"/>
+			</column>
+            <column name="units" type="NUMBER(10,5)" >
+                <constraints nullable="false"/>
+            </column>
+		</createTable>
+	</changeSet>
+
+
+   <changeSet author="Bruno Catafesta" id="009_catafesta">
+      <createSequence sequenceName="sq_consumer" startValue="1" incrementBy="1" />
+   </changeSet>
+
+   <changeSet author="Bruno Catafesta" id="010_catafesta">
+      <createSequence sequenceName="sq_manufacturer" startValue="1" incrementBy="1" />
+   </changeSet>
+   
+   <changeSet author="Bruno Catafesta" id="011_catafesta">
+      <createSequence sequenceName="sq_product" startValue="1" incrementBy="1" />
+   </changeSet>
+
+	<changeSet author="Bruno Catafesta" id="012_catafesta">
+		<createSequence sequenceName="sq_payment" startValue="1" incrementBy="1" />
+	</changeSet>
+
+	<changeSet author="Bruno Catafesta" id="013_catafesta">
+		<createSequence sequenceName="sq_delivery" startValue="1" incrementBy="1" />
+	</changeSet>
+
+	<changeSet author="Bruno Catafesta" id="014_catafesta">
+		<createSequence sequenceName="sq_status_ordered" startValue="1" incrementBy="1" />
+	</changeSet>
+
+	<changeSet author="Bruno Catafesta" id="015_catafesta">
+		<createSequence sequenceName="sq_ordered" startValue="1" incrementBy="1" />
+	</changeSet>
+
+	<changeSet author="Bruno Catafesta" id="016_catafesta">
+		<createSequence sequenceName="sq_ordered_item" startValue="1" incrementBy="1" />
+	</changeSet>
+
+    <changeSet author="Bruno Catafesta" id="017_catafesta">
+      <addForeignKeyConstraint constraintName="fk_product_manufacturer" baseTableName="product" baseColumnNames="manufacturer" referencedTableName="manufacturer" referencedColumnNames="id" />
+    </changeSet>
+
+    <changeSet author="Bruno Catafesta" id="018_catafesta">
+        <addForeignKeyConstraint constraintName="fk_ordered_status" baseTableName="ordered" baseColumnNames="status_ordered" referencedTableName="status_ordered" referencedColumnNames="id" />
+    </changeSet>
+
+    <changeSet author="Bruno Catafesta" id="019_catafesta">
+        <addForeignKeyConstraint constraintName="fk_ordered_consumer" baseTableName="ordered" baseColumnNames="consumer" referencedTableName="consumer" referencedColumnNames="id" />
+    </changeSet>
+
+    <changeSet author="Bruno Catafesta" id="020_catafesta">
+        <addForeignKeyConstraint constraintName="fk_ordered_payment" baseTableName="ordered" baseColumnNames="payment" referencedTableName="payment" referencedColumnNames="id" />
+    </changeSet>
+
+    <changeSet author="Bruno Catafesta" id="021_catafesta">
+        <addForeignKeyConstraint constraintName="fk_ordered_delivery" baseTableName="ordered" baseColumnNames="delivery" referencedTableName="delivery" referencedColumnNames="id" />
+    </changeSet>
+
+    <changeSet author="Bruno Catafesta" id="022_catafesta">
+        <addForeignKeyConstraint constraintName="fk_ordered_item_ordered" baseTableName="ordered_item" baseColumnNames="ordered" referencedTableName="ordered" referencedColumnNames="id" />
+    </changeSet>
+
+    <changeSet author="Bruno Catafesta" id="023_catafesta">
+        <addForeignKeyConstraint constraintName="fk_ordered_item_product" baseTableName="ordered_item" baseColumnNames="product" referencedTableName="product" referencedColumnNames="id" />
+    </changeSet>
+
+</databaseChangeLog>
