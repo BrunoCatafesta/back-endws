@@ -39,6 +39,10 @@ TIPO: POST   URL:http://localhost:8080/ordered/
 
 <img width="511" alt="Captura de Tela 2019-11-05 às 21 53 53" src="https://user-images.githubusercontent.com/22947439/68258856-d6212b80-0016-11ea-8fe9-1f65ec886e5f.png">
 
+
+<img width="516" alt="Captura de Tela 2019-11-05 às 22 00 19" src="https://user-images.githubusercontent.com/22947439/68259063-8ee76a80-0017-11ea-90d4-1d5ead93261c.png">
+
+
 #Testes Unitários e de Integração:
 
 
