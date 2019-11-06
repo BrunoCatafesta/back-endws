@@ -29,5 +29,70 @@ TIPO: POST   URL:http://localhost:8080/manufacturer/
 
 Product
 
+TIPO: POST   URL:http://localhost:8080/product/
+
 <img width="663" alt="Captura de Tela 2019-11-05 às 21 37 58" src="https://user-images.githubusercontent.com/22947439/68258118-7164d180-0014-11ea-8bcc-d5947ecb18c5.png">
+
+Ordered
+
+TIPO: POST   URL:http://localhost:8080/ordered/
+Requisiçao:
+{
+  "products": [
+    { "id": 6, "units": 2 },
+    { "id": 3, "units": 2.25 },
+    { "id": 14, "units": 1 }
+  ],
+  "consumer": {
+    "name": "John Doe",
+    "phone": "+554512345678",
+    "email": "some@one.com"
+  },
+  "payment": {
+    "mode": "bank slip",
+    "installments": 3
+  },
+  "delivery": {
+    "mode": "in-store withdrawal"
+  }
+}
+Resposta:
+{
+    "id": 10,
+    "consumer": {
+        "id": 10,
+        "name": "John Doe",
+        "phone": "+554512345678",
+        "email": "some@one.com"
+    },
+    "delivery": {
+        "id": 10,
+        "mode": "in-store withdrawal"
+    },
+    "payment": {
+        "id": 10,
+        "installments": 3,
+        "mode": "bank slip",
+        "installmentValue": 6020.3075
+    },
+    "status": "Pending",
+    "products": [
+        {
+            "id": 6,
+            "units": 2
+        },
+        {
+            "id": 3,
+            "units": 2.25
+        },
+        {
+            "id": 14,
+            "units": 1
+        }
+    ]
+}
+
+#Testes Unitários e de Integração:
+
+
 
