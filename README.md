@@ -18,4 +18,10 @@
  
   <img width="1280" alt="Captura de Tela 2019-11-05 às 19 09 36" src="https://user-images.githubusercontent.com/22947439/68250922-cdbdf600-0000-11ea-968c-4fe848e5af09.png">
   
-    
+ 
+ # Serviços 
+ 
+Manufacturer 
+
+TIPO: POST   URL:http://localhost:8080/manufacturer/
+
