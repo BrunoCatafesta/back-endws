@@ -14,7 +14,7 @@
   
   Compilar o projeto usando o comando "gradle build" e na sequência executar a aplicação com o comando "gradle run".
   
-  Os Testes de integração serão executados em banco de memória "H2".
+  Os Testes de integração serão executados em banco em memória "H2".
   
   Não é necessario aplicar quaisquer script manualmente no banco, pois o liquibase se encarregara de executar esta tarefa.
   
