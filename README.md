@@ -36,61 +36,8 @@ TIPO: POST   URL:http://localhost:8080/product/
 Ordered
 
 TIPO: POST   URL:http://localhost:8080/ordered/
-Requisiçao:
-{
-  "products": [
-    { "id": 6, "units": 2 },
-    { "id": 3, "units": 2.25 },
-    { "id": 14, "units": 1 }
-  ],
-  "consumer": {
-    "name": "John Doe",
-    "phone": "+554512345678",
-    "email": "some@one.com"
-  },
-  "payment": {
-    "mode": "bank slip",
-    "installments": 3
-  },
-  "delivery": {
-    "mode": "in-store withdrawal"
-  }
-}
-Resposta:
-{
-    "id": 10,
-    "consumer": {
-        "id": 10,
-        "name": "John Doe",
-        "phone": "+554512345678",
-        "email": "some@one.com"
-    },
-    "delivery": {
-        "id": 10,
-        "mode": "in-store withdrawal"
-    },
-    "payment": {
-        "id": 10,
-        "installments": 3,
-        "mode": "bank slip",
-        "installmentValue": 6020.3075
-    },
-    "status": "Pending",
-    "products": [
-        {
-            "id": 6,
-            "units": 2
-        },
-        {
-            "id": 3,
-            "units": 2.25
-        },
-        {
-            "id": 14,
-            "units": 1
-        }
-    ]
-}
+
+
 
 #Testes Unitários e de Integração:
 
