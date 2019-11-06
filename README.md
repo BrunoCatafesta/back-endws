@@ -26,3 +26,8 @@ Manufacturer
 TIPO: POST   URL:http://localhost:8080/manufacturer/
 
 <img width="663" alt="Captura de Tela 2019-11-05 às 21 13 01" src="https://user-images.githubusercontent.com/22947439/68257129-fd74fa00-0010-11ea-8755-3767a5e4073b.png">
+
+Product
+
+
+
