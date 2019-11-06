@@ -29,5 +29,5 @@ TIPO: POST   URL:http://localhost:8080/manufacturer/
 
 Product
 
-
+<img width="663" alt="Captura de Tela 2019-11-05 às 21 37 58" src="https://user-images.githubusercontent.com/22947439/68258118-7164d180-0014-11ea-8bcc-d5947ecb18c5.png">
 
