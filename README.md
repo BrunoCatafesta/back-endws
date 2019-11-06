@@ -6,8 +6,10 @@
 
   É necessário ter um banco de dados PostgreSQL instalada na maquina local ou servidor e configurar as propriedades no projeto localizado em: "src/main/resorces/application.properties" por padrão segue as configurações abaixo:
    
-   URL: "jdbc:postgresql://localhost:5432/backend"
+   URL:  "jdbc:postgresql://localhost:5432/backend"
+   
    USERNAME: "postgres"
+   
    PASSWORD: "postgres"   
   
   Compilar o projeto usando o comando "gradle build" e na sequência executar a aplicação com o comando "gradle run".
