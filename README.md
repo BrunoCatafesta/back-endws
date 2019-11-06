@@ -16,8 +16,6 @@
   
   Os Testes de integração serão executados em banco de memória "H2".
   
-  Compilar o projeto usando o comando "gradle build" e na sequência executar a aplicação com o comando "gradle run".
-  
   Não é necessario aplicar quaisquer script manualmente no banco, pois o liquibase se encarregara de executar esta tarefa.
   
   É possível verificar as especificações dos endpoints expostos através do swagger acessando: " http://localhost:8080/swagger-ui.html#/" exemplo:
