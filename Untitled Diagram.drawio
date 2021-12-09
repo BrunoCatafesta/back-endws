@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-12-09T12:00:28.735Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36" etag="div754jHRzWBiwXF6jh2" version="15.9.4" type="github">
+<mxfile host="app.diagrams.net" modified="2021-12-09T12:59:31.822Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36" etag="Bz-OZoFYA9nDO13ocG7h" version="15.9.4" type="github">
   <diagram id="ChrQOSbGhJHsZ2k16Fdw" name="Page-1">
     <mxGraphModel dx="1085" dy="1560" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -56,7 +56,7 @@
           <mxGeometry x="20" y="-310" width="200" height="200" as="geometry" />
         </mxCell>
         <mxCell id="LSzUc_qTH7OX4sxWmXUj-7" value="Elastic de Liquidação" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="430" y="-480" width="290" height="60" as="geometry" />
+          <mxGeometry x="310" y="-510" width="290" height="60" as="geometry" />
         </mxCell>
         <mxCell id="LSzUc_qTH7OX4sxWmXUj-20" value="REST&lt;br&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
           <mxGeometry x="620" y="-270" width="50" height="20" as="geometry" />
@@ -100,7 +100,10 @@
           <mxGeometry x="505" y="180" width="70" height="20" as="geometry" />
         </mxCell>
         <mxCell id="LSzUc_qTH7OX4sxWmXUj-41" value="Coleção Consolidada por mês armazenando:&lt;br&gt;codigoCredencidor&lt;br&gt;pontovenda&lt;br&gt;qtdVenda&lt;br&gt;competenciaVenda&lt;br&gt;qtdDisputa&lt;br&gt;indice&lt;br&gt;qtdExcesso&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;shadow=0;glass=1;sketch=0;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="260" y="-150" width="150" height="160" as="geometry" />
+          <mxGeometry x="260" y="-180" width="150" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="LSzUc_qTH7OX4sxWmXUj-43" value="" style="whiteSpace=wrap;html=1;aspect=fixed;shadow=0;glass=1;sketch=0;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry y="-520" width="610" height="610" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
