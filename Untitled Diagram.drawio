@@ -1,1 +1,66 @@
-<mxfile host="app.diagrams.net" modified="2021-12-08T20:45:18.656Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36" version="15.8.6" etag="hTi35qxyyC7hHU11QnTF" type="github"><diagram id="ChrQOSbGhJHsZ2k16Fdw">UzV2zq1wL0osyPDNT0nNUTV2VTV2LsrPL4GwciucU3NyVI0MMlNUjV1UjYwMgFjVyA2HrCFY1qAgsSg1rwSLBiADYTaQg2Y1AA==</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2021-12-09T00:13:12.620Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36" etag="a8RuWcma8NKw112U73VM" version="15.9.4" type="github">
+  <diagram id="ChrQOSbGhJHsZ2k16Fdw" name="Page-1">
+    <mxGraphModel dx="868" dy="1560" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="LSzUc_qTH7OX4sxWmXUj-18" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="LSzUc_qTH7OX4sxWmXUj-1" target="LSzUc_qTH7OX4sxWmXUj-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="LSzUc_qTH7OX4sxWmXUj-21" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="LSzUc_qTH7OX4sxWmXUj-1" target="LSzUc_qTH7OX4sxWmXUj-4">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="510" y="-150" />
+              <mxPoint x="450" y="-150" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LSzUc_qTH7OX4sxWmXUj-22" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="LSzUc_qTH7OX4sxWmXUj-1" target="LSzUc_qTH7OX4sxWmXUj-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="LSzUc_qTH7OX4sxWmXUj-1" value="Elo Sumarizador&amp;nbsp;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="480" y="-280" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="LSzUc_qTH7OX4sxWmXUj-15" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="LSzUc_qTH7OX4sxWmXUj-2" target="LSzUc_qTH7OX4sxWmXUj-1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="670" y="-240" />
+              <mxPoint x="670" y="-240" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LSzUc_qTH7OX4sxWmXUj-2" value="Elo Tarifas" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="710" y="-280" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="LSzUc_qTH7OX4sxWmXUj-8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="LSzUc_qTH7OX4sxWmXUj-3" target="LSzUc_qTH7OX4sxWmXUj-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="LSzUc_qTH7OX4sxWmXUj-13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="LSzUc_qTH7OX4sxWmXUj-3" target="LSzUc_qTH7OX4sxWmXUj-6">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="145" y="-140" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="310" y="-160" />
+              <mxPoint x="280" y="-160" />
+              <mxPoint x="280" y="-90" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LSzUc_qTH7OX4sxWmXUj-3" value="Job executa diariamente na madrugada&amp;nbsp;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="-320" width="160" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="LSzUc_qTH7OX4sxWmXUj-4" value="MongoDB" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
+          <mxGeometry x="420" y="-80" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="LSzUc_qTH7OX4sxWmXUj-6" value="Detalhes das transações de rejeição TE15, somente campos necessários:&amp;nbsp; Data Transacao, Credenciador, pontovenda, Quantidade de transação de venda, id do elastic&amp;nbsp;&lt;br&gt;&amp;nbsp;" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="60" y="-190" width="200" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="LSzUc_qTH7OX4sxWmXUj-7" value="Elastic de Liquidação" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="125" y="-410" width="290" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="LSzUc_qTH7OX4sxWmXUj-20" value="REST&lt;br&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="605" y="-270" width="50" height="20" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
