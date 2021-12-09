@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2021-12-09T11:33:12.584Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36" etag="aQpxSQA3jvtD1GS_q5xD" version="15.9.4" type="github">
+<mxfile host="app.diagrams.net" modified="2021-12-09T11:44:56.837Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36" etag="X7ONIxMK2t-X7qlxC8NE" version="15.9.4" type="github">
   <diagram id="ChrQOSbGhJHsZ2k16Fdw" name="Page-1">
-    <mxGraphModel dx="868" dy="1560" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1004" dy="1560" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -10,8 +10,8 @@
         <mxCell id="LSzUc_qTH7OX4sxWmXUj-21" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="LSzUc_qTH7OX4sxWmXUj-1" target="LSzUc_qTH7OX4sxWmXUj-4">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="510" y="-150" />
-              <mxPoint x="450" y="-150" />
+              <mxPoint x="520" y="-150" />
+              <mxPoint x="540" y="-150" />
             </Array>
           </mxGeometry>
         </mxCell>
@@ -49,9 +49,9 @@
           <mxGeometry x="280" y="-320" width="160" height="140" as="geometry" />
         </mxCell>
         <mxCell id="LSzUc_qTH7OX4sxWmXUj-4" value="MongoDB" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
-          <mxGeometry x="420" y="-80" width="60" height="80" as="geometry" />
+          <mxGeometry x="440" y="-100" width="60" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="LSzUc_qTH7OX4sxWmXUj-6" value="Detalhes das transações de rejeição TE15, somente campos necessários:&amp;nbsp; Data Transacao, Credenciador, pontovenda, Quantidade de transação de venda, id do elastic&amp;nbsp;&lt;br&gt;&amp;nbsp;" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+        <mxCell id="LSzUc_qTH7OX4sxWmXUj-6" value="Processa os consolidados de venda e de disputas e guarda as informações calculadas por dia no&amp;nbsp;&lt;br&gt;MongoDB&amp;nbsp;" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
           <mxGeometry x="60" y="-190" width="200" height="200" as="geometry" />
         </mxCell>
         <mxCell id="LSzUc_qTH7OX4sxWmXUj-7" value="Elastic de Liquidação" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
@@ -71,11 +71,32 @@
         <mxCell id="LSzUc_qTH7OX4sxWmXUj-30" value="&lt;b&gt;Programa Excesso de Disputas&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;glass=1;sketch=0;fillColor=none;" vertex="1" parent="1">
           <mxGeometry x="30" y="100" width="790" height="60" as="geometry" />
         </mxCell>
+        <mxCell id="LSzUc_qTH7OX4sxWmXUj-35" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="LSzUc_qTH7OX4sxWmXUj-31" target="LSzUc_qTH7OX4sxWmXUj-34">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="LSzUc_qTH7OX4sxWmXUj-31" value="Obter a quantidade de vendas TE05 agrupadas por credenciador e ponto de venda.&amp;nbsp;" style="whiteSpace=wrap;html=1;aspect=fixed;shadow=0;glass=1;sketch=0;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="240" y="230" width="140" height="140" as="geometry" />
+          <mxGeometry x="250" y="210" width="140" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="LSzUc_qTH7OX4sxWmXUj-36" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="LSzUc_qTH7OX4sxWmXUj-32" target="LSzUc_qTH7OX4sxWmXUj-34">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="LSzUc_qTH7OX4sxWmXUj-32" value="Obter a quantidade de vendas TE15 agrupadas por credenciador e ponto de venda.&amp;nbsp;" style="whiteSpace=wrap;html=1;aspect=fixed;shadow=0;glass=1;sketch=0;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="450" y="230" width="140" height="140" as="geometry" />
+          <mxGeometry x="480" y="210" width="140" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="LSzUc_qTH7OX4sxWmXUj-34" value="&lt;div&gt;- Índice de Chargeback (Qtd de TE15 / Qtd de TE05)&lt;/div&gt;&lt;div&gt;- Quantidade de Chargebacks Excessivos {Nr total de Chargeback - (Nr total de vendas * 1,49%)}&lt;/div&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;shadow=0;glass=1;sketch=0;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="350" y="400" width="190" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="LSzUc_qTH7OX4sxWmXUj-37" value="Mês" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="310" y="160" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="LSzUc_qTH7OX4sxWmXUj-38" value="Outubro" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="300" y="180" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="LSzUc_qTH7OX4sxWmXUj-39" value="Mês" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="520" y="160" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="LSzUc_qTH7OX4sxWmXUj-40" value="Novembro" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="505" y="180" width="70" height="20" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
